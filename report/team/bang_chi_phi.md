@@ -61,10 +61,10 @@ Tỉ lệ lần chạy `ok` theo lần thử (đo từ trace, số lần chạy 
 
 | Khối lượng | Việc thành công mỗi tháng | Chi phí cố định mỗi việc | Chi phí mỗi việc thành công + cố định | So với 12.000 đ |
 | --- | ---: | ---: | ---: | ---: |
-| 45.000 yêu cầu/tháng | ... | ... | ... | ... |
-| Một nửa khối lượng | ... | ... | ... | ... |
+| 45.000 yêu cầu/tháng | 33.750 | 1.185 đ | 4.599 đ (simulated) | 0,38× |
+| Một nửa khối lượng (22.500) | 16.875 | 2.370 đ | 5.784 đ (simulated) | 0,48× |
 
-- Chi phí cố định có đổi kết luận không? Ở khối lượng nào? ...
+- Chi phí cố định có đổi kết luận không? Ở khối lượng nào? Ở quy mô đầy đủ (45.000 yêu cầu/tháng), chi phí cố định 1.185 đ/việc đưa tổng lên **4.599 đ = 0,38×** [simulated], không đổi kết luận. Khi giảm một nửa khối lượng (22.500/tháng), cố định tăng gấp đôi lên 2.370 đ/việc (**5.784 đ = 0,48×** [simulated]) và sẽ đội mạnh nếu khối lượng pilot quá nhỏ.
 
 <!-- ===== VÙNG TRUNG — chỉ TRUNG sửa phần dưới ===== -->
 
@@ -107,5 +107,5 @@ Chi phí cả hệ thống = tổng chi phí trợ lý + 12.000 đ × số yêu 
 
 ## B4 · Nếu phải xem lại tất cả
 
-- Chi phí mỗi việc thành công khi xem lại 100% (`noi_dia` + `hang_nang`), so với 12.000 đ: ...
-- Kết quả này nói gì về thứ pilot cần học được? ...
+- Chi phí mỗi việc thành công khi xem lại 100% (`noi_dia` + `hang_nang`), so với 12.000 đ: Với 9 phút làm lại/ca, chi phí là **11.743 đ = 0,98×** [simulated] (hoà vốn nếu xem lại ≤ 5,1 phút); dùng trung bình 15,3 phút/ca từ dữ liệu thì lên **12.415 đ = 1,03×** [simulated] (hoà vốn ≤ 4,8 phút), đắt hơn nhân viên tự làm.
+- Kết quả này nói gì về thứ pilot cần học được? Vì tiền xem lại chiếm ~90% tổng chi phí nên xem lại 100% gần như không tiết kiệm được gì; pilot phải học được tỉ lệ xem lại có thể giảm an toàn xuống mức nào và mỗi lần xem lại có rút ngắn dưới 5 phút được không.

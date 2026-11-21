@@ -290,7 +290,27 @@ def in_chi_so_E1(reqs):
     """In 3 chỉ số tính thử (chính, dùng, an toàn) trên 1.200 yêu cầu,
     và tỉ lệ mo_lai_trong_7_ngay: toàn bộ và trong phạm vi noi_dia + hang_nang (dùng cho luật dừng D3)."""
     print('\n=== E1 · Chỉ số tính thử ===')
-    print('TODO CP5')
+    n_tong = len(reqs)
+    n_chinh = int(((reqs['dong_trong_24h'] == 1) & (reqs['mo_lai_trong_7_ngay'] == 0)).sum())
+    chinh = n_chinh / n_tong
+
+    xem = reqs[reqs['duoc_xem_lai'] == 1]
+    n_xem = len(xem)
+    n_bo_qua = int(xem['quyet_dinh_xem_lai'].isin(['sua', 'bo']).sum())
+    bo_qua = n_bo_qua / n_xem
+
+    n_an_toan = int((reqs['mo_lai_trong_7_ngay'] == 1).sum())
+    an_toan = n_an_toan / n_tong
+
+    pham_vi = reqs[reqs['loai'].isin(['noi_dia', 'hang_nang'])]
+    n_pv = len(pham_vi)
+    n_mo_lai_pv = int((pham_vi['mo_lai_trong_7_ngay'] == 1).sum())
+    mo_lai_pv = n_mo_lai_pv / n_pv
+
+    print(f'Chỉ số chính (đóng 24h & không mở lại 7 ngày): {chinh:.2%} ({n_chinh}/{n_tong})')
+    print(f'Chỉ số dùng (bỏ qua gợi ý sua+bo / được xem lại): {bo_qua:.2%} ({n_bo_qua}/{n_xem})')
+    print(f'Chỉ số an toàn (mở lại trong 7 ngày - toàn bộ): {an_toan:.2%} ({n_an_toan}/{n_tong})')
+    print(f'Tỉ lệ mo_lai_trong_7_ngay (noi_dia + hang_nang): {mo_lai_pv:.2%} ({n_mo_lai_pv}/{n_pv})')
 
 
 # =====================================================================

@@ -95,8 +95,14 @@ Mỗi thành viên có báo cáo riêng:
 
 ### Đóng góp cụ thể
 
--
+- Viết và chạy `in_chi_so_E1(reqs)` trong `src/lab13.py` để tính 3 chỉ số E1 và tỉ lệ `mo_lai_trong_7_ngay` cho D3.
+- Kiểm số và hoàn thiện A4 (chi phí cố định theo 2 mức khối lượng) và B4 (xem lại 100%, hai mức phút làm lại 9 và 15,3 phút) trong `report/team/bang_chi_phi.md`.
+- Gắn nhãn độc lập 20 ca lỗi vào `report/team/nhan_c_nguoi1_Hung.md`, điền cột người 1 và 3 dòng khắc phục (`Do người dùng`, `Hệ thống`, `Ngầm`) trong `report/team/bang_loi.md`.
+- Trả lời 5 câu kiểm tra D2 ("tách được tác động") trong `report/team/pilot_plan.yaml`.
+- Hoàn thiện bảng chỉ số E1, 10 event có `trace_id` và kiểm tra chéo đo lường trong `report/team/chi_so.md`.
 
 ### Bằng chứng
 
--
+- `src/lab13.py` (`in_chi_so_E1`): chính 82,83% (994/1.200), dùng 27,12% (48/177), an toàn 4,25% (51/1.200), phạm vi `noi_dia` + `hang_nang` mở lại 3,97% (39/982).
+- `report/team/bang_chi_phi.md` (A4: 4.599 đ = 0,38× và 5.784 đ = 0,48× [simulated]; B4: 11.743 đ = 0,98× và 12.415 đ = 1,03× [simulated]).
+- `report/team/nhan_c_nguoi1_Hung.md`, `report/team/bang_loi.md`, `report/team/pilot_plan.yaml`, `report/team/chi_so.md`.
