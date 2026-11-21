@@ -2,6 +2,8 @@
 
 20 ca lỗi nằm trong `docs/Ngay13_Lab13_De_bai_hoc_vien.docx`. Năm loại theo Google PAIR: **Do người dùng · Hệ thống · Ngữ cảnh · Giới hạn hệ thống · Ngầm**. Gắn nhãn theo nguyên nhân gốc, không theo chỗ cần sửa.
 
+<!-- ===== Cả file do HÙNG sửa. Nhãn độc lập: mỗi người điền file riêng nhan_c_nguoi1_Hung.md / nhan_c_nguoi2_Khanh.md, commit trước khi so; sau S4 Hùng chép hai cột vào bảng dưới. Hai dòng khắc phục của Khánh lấy từ file nhan_c_nguoi2_Khanh.md. ===== -->
+
 ## Hai bộ nhãn độc lập
 
 Người gắn nhãn 1: ... · Người gắn nhãn 2: ... (gắn trong 8 phút, không trao đổi)

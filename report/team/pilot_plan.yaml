@@ -2,6 +2,7 @@
 # Điền mọi chỗ có dấu hỏi. Khi nộp, ngoài các dòng chú thích không còn dấu hỏi nào.
 # Kiểm tra đọc được: python -c "import yaml; yaml.safe_load(open('../report/team/pilot_plan.yaml'))"
 #
+# ===== VÙNG KHÁNH: D1, đánh đổi, mọi trường YAML trừ stop_rules =====
 # D1 · Cỡ mẫu (baseline 0,70; mục tiêu +5 điểm; alpha 0,05; power 0,8; ICC 0,02)
 #   a) Chia theo yêu cầu:
 #   b) Theo nhân viên, m = 75:
@@ -9,6 +10,7 @@
 #   d) 6 depot mỗi nhóm:
 #   e) Mức chênh 6 điểm (859 mỗi nhóm), 20 nhân viên mỗi nhóm:
 #
+# ===== VÙNG HÙNG: năm câu D2 =====
 # D2 · Năm câu kiểm tra "tách được tác động" với cách chia đã chọn (mỗi câu một dòng):
 #   1. Đối chứng chạy cùng thời gian:
 #   2. Chia ngẫu nhiên hay do người chọn:
@@ -16,8 +18,10 @@
 #   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước:
 #   5. Ít nhất 20 cụm mỗi nhóm:
 #
+# ===== VÙNG KHÁNH =====
 # Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện):
 #
+# ===== VÙNG TRUNG: tỉ lệ mở lại (số do Hùng tính ở E1) + stop_rules =====
 # Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn:
 
 pilot:
@@ -41,10 +45,12 @@ pilot:
     concurrent_control: "?"
     spillover_risk: "?"
     predeclared: "?"
+  # ===== VÙNG TRUNG: stop_rules =====
   stop_rules:
     - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
     - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
     - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
+  # ===== VÙNG KHÁNH: các trường còn lại =====
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
   rollback: "?"                   # ai bấm, mất bao lâu, khách được phục vụ bằng gì
   decision_date: "?"

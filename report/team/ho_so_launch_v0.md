@@ -2,7 +2,9 @@
 
 Một trang. Cột trạng thái chỉ nhận: **Xong, có bằng chứng · Chưa · Giả lập**. Mục nào dựa trên cột `_simulated` ghi Giả lập. Người phụ trách là một vai trò, không ghi "cả đội". Gate 2a chỉ duyệt kế hoạch pilot: không viết như thể trợ lý đã được duyệt chạy chính thức (xem quy tắc 5 trong `README.md`).
 
-Nhóm: ... · Lớp: ...
+<!-- ===== Cả file do KHÁNH sửa. Trung, Hùng gửi số cho Khánh, không sửa trực tiếp. ===== -->
+
+Nhóm: TamKa · Lớp: L3A
 
 | Mục | Con số chính | Trạng thái | Người phụ trách |
 | --- | --- | --- | --- |

@@ -2,6 +2,8 @@
 
 Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` ghi nhãn `simulated`. Mỗi câu trả lời không quá ba dòng, có ít nhất một con số.
 
+<!-- ===== VÙNG TRUNG — chỉ TRUNG sửa phần dưới ===== -->
+
 ## A1 · Ba phép thử đáp án biết trước
 
 | Phép thử (p = 0,8) | Kết quả của nhóm |
@@ -38,6 +40,8 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 
 - Loại nào không đáng để trợ lý xử lý? Với loại đó, cho chạy lại tới 3 lần có giúp không? ...
 
+<!-- ===== VÙNG HÙNG — chỉ HÙNG sửa phần dưới ===== -->
+
 ## A4 · Chi phí cố định (phạm vi noi_dia + hang_nang)
 
 | Khối lượng | Việc thành công mỗi tháng | Chi phí cố định mỗi việc | Chi phí mỗi việc thành công + cố định | So với 12.000 đ |
@@ -46,6 +50,8 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 | Một nửa khối lượng | ... | ... | ... | ... |
 
 - Chi phí cố định có đổi kết luận không? Ở khối lượng nào? ...
+
+<!-- ===== VÙNG TRUNG — chỉ TRUNG sửa phần dưới ===== -->
 
 ## B1 · Đổi từng yếu tố
 
@@ -75,6 +81,8 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 | 3 lần | ... | ... | ... | ... |
 
 - Giới hạn nào rẻ nhất cho công ty? Có trùng với giới hạn cho chi phí mỗi việc thành công thấp nhất không? ...
+
+<!-- ===== VÙNG HÙNG — chỉ HÙNG sửa phần dưới ===== -->
 
 ## B4 · Nếu phải xem lại tất cả
 

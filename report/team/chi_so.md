@@ -1,5 +1,7 @@
 # Đặc tả chỉ số, event và rủi ro kinh tế · Nhiệm vụ E1, E2
 
+<!-- ===== VÙNG HÙNG — chỉ HÙNG sửa phần dưới ===== -->
+
 ## E1 · Đặc tả chỉ số
 
 | Loại | Chỉ số | Công thức | Tính thử trên 1.200 yêu cầu |
@@ -28,6 +30,8 @@ Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý 
 **Kiểm tra chéo:** với mỗi chỉ số ở bảng E1, ghi event dùng để tính. Chỉ số nào không tính được từ danh sách event thì chưa đo được.
 
 - ...
+
+<!-- ===== VÙNG TRUNG — chỉ TRUNG sửa phần dưới ===== -->
 
 ## E2 · Rủi ro kinh tế
 
