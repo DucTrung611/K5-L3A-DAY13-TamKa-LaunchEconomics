@@ -21,8 +21,14 @@
 # ===== VÙNG KHÁNH =====
 # Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện):
 #   Chấp nhận tăng MDE từ 5 điểm lên 6 điểm (cần 859 yêu cầu/nhóm, m >= 299 với 20 nhân viên mỗi nhóm). Nếu tác động thật chỉ là 5 điểm, power giảm từ 0,80 xuống còn khoảng 0,64 (64,2%).
+#   Kéo dài pilot không sửa được: 20 cụm/nhánh chặn n hiệu dụng ở 20 / 0,02 = 1.000 < 1.251; power tối đa ở +5 điểm là 0,71
+#   (NormalIndPower, n = 1.000). Giám đốc vận hành ký chấp nhận đánh đổi trước bước 10%; quy tắc đọc kết quả xem decision_rule.
 
 # ===== VÙNG TRUNG: tỉ lệ mở lại (số do Hùng tính ở E1) + stop_rules =====
+# Cách đọc luật dừng: "KHÔNG THÌ" là việc bị cấm KHI LUẬT ĐÃ KÍCH HOẠT mà chưa xử lý xong. Khi không chạm ngưỡng nào,
+#   pilot chuyển bước theo lịch 10% → 25% → 50%, mỗi bước một tuần.
+# Luật chi phí (8.000 đ, đo 2 tuần liên tiếp) cũng là giới hạn thời gian cho pha xem lại 100%: pha này chỉ ở bước 10% (1 tuần);
+#   nếu sang tuần 2 vẫn chưa giảm được xem lại thì CPS ≈ 11.743–12.415 đ [simulated] > 8.000 đ → luật kích hoạt, thu hẹp về noi_dia.
 # Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn:
 #   Hiện tại (đợt chạy thử): 4,25% trên toàn bộ (51/1.200); 3,97% trong phạm vi noi_dia + hang_nang (39/982).
 #   Ngưỡng tuyệt đối 3% sẽ dừng pilot ngay tuần đầu (3,97% > 3%) → dùng ngưỡng TƯƠNG ĐỐI so với nhóm đối chứng
@@ -55,13 +61,14 @@ pilot:
   # ===== VÙNG TRUNG: stop_rules =====
   stop_rules:
     # an toàn: so với đối chứng + trần tuyệt đối (hiện tại 3,97% trong phạm vi)
-    - "NẾU tỉ lệ mo_lai_trong_7_ngay của nhóm trợ lý cao hơn nhóm đối chứng từ 2 điểm trở lên, hoặc vượt 6%, hoặc có từ 1 ca hoàn trùng tiền TRONG 3 ngày làm việc liên tiếp THÌ Giám đốc vận hành bấm cờ tắt trợ lý trong 30 phút và Kỹ sư trưởng agent rà 20 trace mở lại trong 2 ngày KHÔNG THÌ không được sang bước rollout tiếp theo"
+    - "NẾU tỉ lệ mo_lai_trong_7_ngay của nhóm trợ lý cao hơn nhóm đối chứng từ 2 điểm trở lên, hoặc vượt 6%, hoặc có từ 1 ca hoàn trùng tiền TRONG 3 ngày làm việc liên tiếp THÌ Giám đốc vận hành bấm cờ tắt trợ lý trong 30 phút và Kỹ sư trưởng agent rà 20 trace mở lại trong 2 ngày KHÔNG THÌ, khi luật đã kích hoạt mà chưa xử lý xong, không được bật lại trợ lý và không được sang bước rollout tiếp theo"
     # chi phí: ngưỡng 8.000 đ/việc thành công [simulated], đo bằng phút thật từ event
-    - "NẾU chi phí mỗi việc thành công của nhóm trợ lý (token + tool + phút xem lại và làm lại đo thật) vượt 8.000 đ, hoặc tỉ lệ làm lại vượt 7% (đợt chạy thử 4,9% trong phạm vi) TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp phạm vi về noi_dia và đặt giới hạn 2 lần chạy trong 3 ngày làm việc KHÔNG THÌ không được giữ hang_nang trong pilot và không được mở rộng sang depot mới"
+    - "NẾU chi phí mỗi việc thành công của nhóm trợ lý (token + tool + phút xem lại và làm lại đo thật) vượt 8.000 đ, hoặc tỉ lệ làm lại vượt 7% (đợt chạy thử 4,9% trong phạm vi) TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp phạm vi về noi_dia và đặt giới hạn 2 lần chạy trong 3 ngày làm việc KHÔNG THÌ, khi luật đã kích hoạt mà chưa xử lý xong, không được giữ hang_nang trong pilot và không được mở rộng sang depot mới"
     # mức độ sử dụng: bỏ qua gợi ý (hiện tại 27,12%)
-    - "NẾU tỉ lệ bỏ qua gợi ý (sửa + bỏ trên số được xem lại) vượt 40%, hoặc dưới 50% yêu cầu trong phạm vi của nhóm trợ lý được mở bằng trợ lý TRONG 1 tuần THÌ Trưởng nhóm CSKH phỏng vấn 5 nhân viên nhóm trợ lý và báo cáo nguyên nhân trong 3 ngày làm việc KHÔNG THÌ không được chuyển bước rollout và không được giảm tỉ lệ xem lại"
+    - "NẾU tỉ lệ bỏ qua gợi ý (sửa + bỏ trên số được xem lại) vượt 40%, hoặc dưới 50% yêu cầu trong phạm vi của nhóm trợ lý được mở bằng trợ lý TRONG 1 tuần THÌ Trưởng nhóm CSKH phỏng vấn 5 nhân viên nhóm trợ lý và báo cáo nguyên nhân trong 3 ngày làm việc KHÔNG THÌ, khi luật đã kích hoạt mà chưa xử lý xong, không được chuyển bước rollout và không được giảm tỉ lệ xem lại"
   # ===== VÙNG KHÁNH: các trường còn lại =====
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
   rollback: "Giám đốc vận hành bấm cờ tắt trên dashboard quản trị trong vòng 30 phút; toàn bộ yêu cầu chuyển về luồng nhân viên tự xử lý truyền thống"
   decision_date: "2027-01-05"
+  decision_rule: "Viết trước, Giám đốc vận hành ký trước bước 10%. Ngày 2027-01-05: nếu khoảng tin cậy 95% (có xét cụm staff_id) của chênh lệch chỉ số chính loại trừ 0, chênh từ 5 điểm trở lên và không luật an toàn nào kích hoạt thì đề xuất mở rộng; không đạt thì kết luận chưa đủ bằng chứng (không phải trợ lý không có tác động), No-go cho mở rộng, không kéo dài pilot và không hạ MDE sau khi xem kết quả"
   simulated_inputs: ["phut_xem_lai_simulated", "phut_lam_lai_simulated", "chi_phi_moi_viec_thanh_cong"]

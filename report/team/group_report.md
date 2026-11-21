@@ -38,7 +38,7 @@ Nhóm TamKa xây dựng bộ hồ sơ launch v0 nhằm trả lời 4 câu hỏi 
 ## 5. Khó khăn và cách xử lý
 
 1. **Vấn đề cỡ mẫu cụm:** Với quy mô 40 nhân viên và ICC = 0,02, trần cỡ mẫu hiệu dụng tối đa chỉ đạt $c / ICC = 20 / 0,02 = 1.000 < 1.251$ yêu cầu, không đủ để phát hiện mức chênh 5 điểm với power 80%.
-   - *Cách xử lý:* Nhóm quyết định chấp nhận đánh đổi nâng MDE lên 6 điểm ($n=859$), yêu cầu mỗi nhân viên xử lý $m \ge 299$ đơn ($DE=6,96$). Đồng thời tính toán và công khai con số bất lợi: nếu tác động thực tế chỉ đạt 5 điểm, power sẽ giảm xuống 64,2%, từ đó đưa vào điều kiện kiểm tra kéo dài thời gian pilot thêm 2 tuần nếu cần.
+   - *Cách xử lý:* Nhóm quyết định chấp nhận đánh đổi nâng MDE lên 6 điểm ($n=859$), yêu cầu mỗi nhân viên xử lý $m \ge 299$ đơn ($DE=6,96$). Đồng thời tính toán và công khai con số bất lợi: nếu tác động thực tế chỉ đạt 5 điểm, power sẽ giảm xuống 64,2%. Sau phản biện của hội đồng HongSac, nhóm bỏ ý "kéo dài pilot 2 tuần" vì 20 cụm/nhánh chặn cỡ mẫu hiệu dụng ở 1.000 < 1.251 (power tối đa 0,71); thay bằng việc Giám đốc vận hành ký chấp nhận power 0,64 ở +5 điểm và quy tắc đọc kết quả viết trước (không đạt thì "chưa đủ bằng chứng", No-go cho mở rộng).
 2. **Sự cố môi trường ban đầu:** Môi trường ảo Python ban đầu bị tạo nhầm từ MSYS2/MinGW dẫn tới lỗi SSL và không thể cài các wheel tiền biên dịch của pandas/scipy/statsmodels.
    - *Cách xử lý:* Tái cấu trúc môi trường ảo sạch sẽ bằng Python 3.12 chuẩn của Windows (`C:\Python312\python.exe`), cài đặt thành công 100% requirements mà không cần biên dịch từ mã nguồn.
 
