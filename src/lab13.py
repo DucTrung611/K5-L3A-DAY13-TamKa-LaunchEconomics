@@ -232,16 +232,54 @@ def in_bang_B(runs, reqs):
 
 def co_mau(p1, p2, alpha=0.05, power=0.8):
     """Cỡ mẫu mỗi nhóm để so hai tỉ lệ p1, p2 (làm tròn lên)."""
-    raise NotImplementedError('VIẾT Ở ĐÂY')
+    from statistics import NormalDist
+    za = NormalDist().inv_cdf(1 - alpha / 2)
+    zb = NormalDist().inv_cdf(power)
+    pb = (p1 + p2) / 2
+    n = (za * math.sqrt(2 * pb * (1 - pb)) + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2 / (p2 - p1) ** 2
+    return math.ceil(n)
 
 
 def in_bang_D1():
     """In D1 a–e: baseline 0,70; +5 điểm; alpha 0,05; power 0,8; ICC 0,02.
     Thêm: power khi thiết kế cho 6 điểm (859/nhóm) mà tác động thật chỉ 5 điểm."""
-    print('\n=== D1 · Cỡ mẫu ===')
-    print('TODO CP4')
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    from statsmodels.stats.proportion import proportion_effectsize
+    from statsmodels.stats.power import NormalIndPower
+
+    print('\n=== D1 · Cỡ mẫu (baseline 0,70; +5 điểm; alpha 0,05; power 0,8; ICC 0,02) ===')
+    
+    # a) Chia theo yêu cầu
+    n_yc = co_mau(0.70, 0.75)
+    print(f'a) Chia theo yêu cầu: {n_yc:,} yêu cầu mỗi nhóm')
+
+    # b) Theo nhân viên, m = 75
+    m_b = 75
+    icc = 0.02
+    de_b = 1 + (m_b - 1) * icc
+    n_b = math.ceil(n_yc * de_b)
+    staff_per_arm_b = math.ceil(n_b / m_b)
+    total_staff_b = staff_per_arm_b * 2
+    print(f'b) Theo nhân viên (m = 75): DE = {de_b:.2f} -> {n_b:,} yêu cầu mỗi nhóm -> {staff_per_arm_b} nhân viên mỗi nhóm (tổng {total_staff_b} > 40: KHÔNG ĐỦ NGƯỜI)')
+
+    # c) 20 nhân viên mỗi nhóm
+    max_c = math.floor(20 / icc)
+    print(f'c) 20 nhân viên mỗi nhóm: trần hiệu dụng c/ICC = {max_c:,} < {n_yc:,} (KHÔNG ĐẠT)')
+
+    # d) 6 depot mỗi nhóm
+    max_d = math.floor(6 / icc)
+    print(f'd) 6 depot mỗi nhóm: trần hiệu dụng c/ICC = {max_d:,} < {n_yc:,} (KHÔNG ĐẠT)')
+
+    # e) Mức chênh 6 điểm (859 mỗi nhóm), 20 nhân viên mỗi nhóm
+    n_6pt = co_mau(0.70, 0.76)
+    m_req = (0.98 * n_6pt) / (20 - 0.02 * n_6pt)
+    m_val = math.ceil(m_req)
+    de_e = 1 + (m_val - 1) * icc
+    print(f'e) Mức chênh 6 điểm ({n_6pt:,} mỗi nhóm), 20 nhân viên: cần m >= {m_val} yêu cầu/người (DE = {de_e:.2f})')
+
+    # Power khi thiết kế cho 6 điểm (859/nhóm) mà tác động thật chỉ 5 điểm
+    es = proportion_effectsize(0.75, 0.70)
+    power_actual = NormalIndPower().power(effect_size=es, nobs1=n_6pt, alpha=0.05)
+    print(f'   Power khi tác động thật chỉ 5 điểm (nobs1={n_6pt}): {power_actual:.2f} (khoảng {power_actual*100:.1f}%)')
 
 
 # =====================================================================
