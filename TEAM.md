@@ -46,11 +46,20 @@ Mỗi thành viên có báo cáo riêng:
 
 ### Đóng góp cụ thể
 
--
+- A1: viết 3 hàm `so_lan_chay_ky_vong`, `ti_le_thanh_cong`, `he_so_chi_phi_moi_viec_thanh_cong` → ba phép thử in ĐẠT (1,20 · 1,25 · 1,25).
+- A2: viết `mo_hinh` (tử số mọi lần chạy, mẫu số chỉ việc thành công, hỗ trợ `max_lan_chay`) → 4.472 đ/việc thành công [simulated], gấp 16,3× hoá đơn chia số yêu cầu; chi phí cả hệ thống 5.865 đ/yêu cầu = 0,49× [simulated].
+- A3: tách 4 loại + bảng tỉ lệ ok theo lần thử → loại quoc_te (1,88×) và doi_tac (0,85×) khỏi phạm vi pilot.
+- A4, B4 trong code (`in_bang_A`, `in_bang_B`) để Hùng đối chiếu với bản tính tay.
+- B1–B3: 9 kịch bản, cặp token×2 + xem lại×2 (+46,3%), xếp hạng làm lại > xem lại > lương; giới hạn 2 lần rẻ nhất cho công ty (6.901.220 đ) [simulated].
+- D3: 3 luật dừng NẾU–TRONG–THÌ–KHÔNG THÌ (an toàn, chi phí, mức độ sử dụng) đặt ngưỡng từ tỉ lệ mở lại hiện tại 3,97% trong phạm vi.
+- E2: 5 dòng rủi ro kinh tế lấy số từ B1, B3, B4, A4.
 
 ### Bằng chứng
 
--
+- `src/lab13.py` (vùng Trung) · lệnh `cd src && python lab13.py A B`.
+- `report/team/bang_chi_phi.md` (A1, A2, A3, B1, B2, B3).
+- `report/team/pilot_plan.yaml` (chú thích tỉ lệ mở lại + `stop_rules`).
+- `report/team/chi_so.md` (E2).
 
 <!-- ===== MỤC CỦA KHÁNH — chỉ Khánh sửa ===== -->
 
