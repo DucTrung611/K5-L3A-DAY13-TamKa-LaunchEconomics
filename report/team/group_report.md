@@ -28,10 +28,10 @@ Nhóm TamKa xây dựng bộ hồ sơ launch v0 nhằm trả lời 4 câu hỏi 
 
 ## 4. Kết quả
 
-- **Chi phí mỗi việc thành công:** Đạt **4.472 đ [simulated]**, gấp **16,3 lần** hóa đơn token + tool (274,7 đ). Giờ làm việc của nhân viên chiếm **92,5%** tổng chi phí (làm lại 51,8%, xem lại 40,7%).
-- **Chi phí cả hệ thống:** Đạt **5.865 đ/yêu cầu = 0,49×** mức 12.000 đ nhân viên tự làm (đã tính chi phí nhân viên xử lý thay 222 yêu cầu trợ lý không hoàn thành).
-- **Phạm vi pilot:** Khuyến nghị chỉ chạy `noi_dia` (0,22×) và `hang_nang` (0,69×); loại bỏ hoàn toàn `quoc_te` (1,88×) và `doi_tac` (0,85×). Khi cộng chi phí cố định 40 triệu đ/tháng, CPS trong phạm vi pilot đạt **4.599 đ (0,38×)** ở quy mô đầy đủ và **5.784 đ (0,48×)** ở nửa quy mô [simulated].
-- **Ba yếu tố nhạy nhất:** 1. Số ca làm lại (+51,8%), 2. Tỉ lệ xem lại (+40,7%), 3. Lương nhân viên (+23,1%). Giá token chỉ ảnh hưởng +5,6%.
+- **Chi phí mỗi việc thành công:** Đạt **4.472 đ [simulated]**, gấp **16,3 lần** hóa đơn token + tool (274,7 đ). Giờ làm việc của nhân viên chiếm **92,5%** tổng chi phí (làm lại 51,8%, xem lại 40,7%) [simulated].
+- **Chi phí cả hệ thống:** Đạt **5.865 đ/yêu cầu = 0,49×** [simulated] mức 12.000 đ nhân viên tự làm (đã tính chi phí nhân viên xử lý thay 222 yêu cầu trợ lý không hoàn thành).
+- **Phạm vi pilot:** Khuyến nghị chỉ chạy `noi_dia` (0,22×) và `hang_nang` (0,69×); loại bỏ hoàn toàn `quoc_te` (1,88×) và `doi_tac` (0,85×) [simulated]. Khi cộng chi phí cố định 40 triệu đ/tháng, CPS trong phạm vi pilot đạt **4.599 đ (0,38×)** ở quy mô đầy đủ và **5.784 đ (0,48×)** ở nửa quy mô [simulated].
+- **Ba yếu tố nhạy nhất:** 1. Số ca làm lại (+51,8%), 2. Tỉ lệ xem lại (+40,7%), 3. Lương nhân viên (+23,1%). Giá token chỉ ảnh hưởng +5,6% [simulated].
 - **Chỉ số đợt chạy thử:** Tỷ lệ đóng 24h & không mở lại 7 ngày đạt **82,83%**; tỷ lệ bỏ qua gợi ý đạt **27,12%**; tỷ lệ mở lại 7 ngày đạt **4,25%** (trong phạm vi pilot là 3,97%).
 - **Đề xuất cuối cùng:** **GO CÓ ĐIỀU KIỆN** (giới hạn 2 lần chạy, giảm bậc xem lại, theo dõi chặt chẽ ngưỡng mở lại 6% và rủi ro power 64,2%).
 

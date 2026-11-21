@@ -6,7 +6,7 @@ File của **Nguyễn Khắc Khánh**. Chỉ Khánh sửa file này.
 
 - Họ tên: Nguyễn Khắc Khánh
 - MSSV: 2A202603472
-- Email: 
+- Email: khackhanh120104@gmail.com
 - Vai trong nhóm: Người gắn nhãn 2 kiêm giữ hồ sơ; người viết code sau giải lao (D1)
 
 ## 2. Phần việc phụ trách
