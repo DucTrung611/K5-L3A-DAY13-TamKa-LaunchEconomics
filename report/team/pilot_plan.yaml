@@ -23,6 +23,12 @@
 #
 # ===== VÙNG TRUNG: tỉ lệ mở lại (số do Hùng tính ở E1) + stop_rules =====
 # Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn:
+#   Hiện tại (đợt chạy thử): 4,25% trên toàn bộ (51/1.200); 3,97% trong phạm vi noi_dia + hang_nang (39/982).
+#   Ngưỡng tuyệt đối 3% sẽ dừng pilot ngay tuần đầu (3,97% > 3%) → dùng ngưỡng TƯƠNG ĐỐI so với nhóm đối chứng
+#   (chênh ≥ 2 điểm) kèm trần tuyệt đối 6% (≈ 1,5 lần mức 3,97% hiện tại), cộng 1 ca hoàn trùng tiền là dừng.
+#   Ngưỡng chi phí 8.000 đ/việc thành công [simulated]: gốc trong phạm vi 3.414 đ, + cố định ở nửa khối lượng 5.784 đ (A4);
+#   xem lại 100% đẩy lên 11.743 đ = 0,98× (B4) → vượt 8.000 đ nghĩa là đã mất phần lớn khoản tiết kiệm.
+#   Ngưỡng bỏ qua gợi ý 40%: hiện tại 27,12% toàn bộ (21,1% trong phạm vi) → còn khoảng 13 điểm dư trước khi dừng.
 
 pilot:
   owner: "?"                      # một người có tên vai trò, không ghi "cả đội"
@@ -47,9 +53,12 @@ pilot:
     predeclared: "?"
   # ===== VÙNG TRUNG: stop_rules =====
   stop_rules:
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
+    # an toàn: so với đối chứng + trần tuyệt đối (hiện tại 3,97% trong phạm vi)
+    - "NẾU tỉ lệ mo_lai_trong_7_ngay của nhóm trợ lý cao hơn nhóm đối chứng từ 2 điểm trở lên, hoặc vượt 6%, hoặc có từ 1 ca hoàn trùng tiền TRONG 3 ngày làm việc liên tiếp THÌ Giám đốc vận hành bấm cờ tắt trợ lý trong 30 phút và Kỹ sư trưởng agent rà 20 trace mở lại trong 2 ngày KHÔNG THÌ không được sang bước rollout tiếp theo"
+    # chi phí: ngưỡng 8.000 đ/việc thành công [simulated], đo bằng phút thật từ event
+    - "NẾU chi phí mỗi việc thành công của nhóm trợ lý (token + tool + phút xem lại và làm lại đo thật) vượt 8.000 đ, hoặc tỉ lệ làm lại vượt 7% (đợt chạy thử 4,9% trong phạm vi) TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp phạm vi về noi_dia và đặt giới hạn 2 lần chạy trong 3 ngày làm việc KHÔNG THÌ không được giữ hang_nang trong pilot và không được mở rộng sang depot mới"
+    # mức độ sử dụng: bỏ qua gợi ý (hiện tại 27,12%)
+    - "NẾU tỉ lệ bỏ qua gợi ý (sửa + bỏ trên số được xem lại) vượt 40%, hoặc dưới 50% yêu cầu trong phạm vi của nhóm trợ lý được mở bằng trợ lý TRONG 1 tuần THÌ Trưởng nhóm CSKH phỏng vấn 5 nhân viên nhóm trợ lý và báo cáo nguyên nhân trong 3 ngày làm việc KHÔNG THÌ không được chuyển bước rollout và không được giảm tỉ lệ xem lại"
   # ===== VÙNG KHÁNH: các trường còn lại =====
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
   rollback: "?"                   # ai bấm, mất bao lâu, khách được phục vụ bằng gì
