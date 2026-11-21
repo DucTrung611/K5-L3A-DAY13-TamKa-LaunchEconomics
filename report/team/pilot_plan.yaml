@@ -28,7 +28,7 @@
 #   Ngưỡng tuyệt đối 3% sẽ dừng pilot ngay tuần đầu (3,97% > 3%) → dùng ngưỡng TƯƠNG ĐỐI so với nhóm đối chứng
 #   (chênh ≥ 2 điểm) kèm trần tuyệt đối 6% (≈ 1,5 lần mức 3,97% hiện tại), cộng 1 ca hoàn trùng tiền là dừng.
 #   Ngưỡng chi phí 8.000 đ/việc thành công [simulated]: gốc trong phạm vi 3.414 đ, + cố định ở nửa khối lượng 5.784 đ (A4);
-#   xem lại 100% đẩy lên 11.743 đ = 0,98× (B4) → vượt 8.000 đ nghĩa là đã mất phần lớn khoản tiết kiệm.
+#   xem lại 100% đẩy lên 11.743 đ = 0,98× [simulated] (B4) → vượt 8.000 đ nghĩa là đã mất phần lớn khoản tiết kiệm.
 #   Ngưỡng bỏ qua gợi ý 40%: hiện tại 27,12% toàn bộ (21,1% trong phạm vi) → còn khoảng 13 điểm dư trước khi dừng.
 
 pilot:

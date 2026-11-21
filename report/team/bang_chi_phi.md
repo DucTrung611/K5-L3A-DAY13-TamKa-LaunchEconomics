@@ -72,7 +72,7 @@ Tỉ lệ lần chạy `ok` theo lần thử (đo từ trace, số lần chạy 
 
 Gốc (A2): 4.472 đ [simulated]. Mỗi dòng là một lần gọi `mo_hinh` với một tham số đã đổi (`python lab13.py B`). Mọi số trong bảng là simulated.
 
-| Kịch bản | Cách tính | Chi phí mỗi việc thành công | Thay đổi (%) |
+| Kịch bản | Cách tính | Chi phí mỗi việc thành công [simulated] | Thay đổi (%) [simulated] |
 | --- | --- | ---: | ---: |
 | Giá token gấp đôi | 52 đ và 260 đ cho 1.000 token; giá tool giữ nguyên | 4.723 | +5,6% |
 | Giá token giảm một nửa | 13 đ và 65 đ | 4.346 | −2,8% |
@@ -95,7 +95,7 @@ Tự kiểm (code có `assert`): mỗi kịch bản "giảm một nửa" giảm 
 
 Chi phí cả hệ thống = tổng chi phí trợ lý + 12.000 đ × số yêu cầu không thành công (nhân viên làm thay). Mọi số là simulated.
 
-| Giới hạn | Tổng chi phí trợ lý | Số yêu cầu không thành công | Chi phí cả hệ thống | Chi phí mỗi việc thành công |
+| Giới hạn | Tổng chi phí trợ lý [simulated] | Số yêu cầu không thành công | Chi phí cả hệ thống [simulated] | Chi phí mỗi việc thành công [simulated] |
 | --- | ---: | ---: | ---: | ---: |
 | 1 lần | 3.621.781 | 319 | 7.449.781 | 4.111 (thấp nhất) |
 | 2 lần | 4.093.220 | 234 | **6.901.220 (rẻ nhất)** | 4.237 |
