@@ -71,11 +71,19 @@ Mỗi thành viên có báo cáo riêng:
 
 ### Đóng góp cụ thể
 
--
+- Viết hàm `co_mau()` và hàm `in_bang_D1()` trong `src/lab13.py` (vùng Khánh); tính đúng 5 câu cỡ mẫu D1 a–e và power khi thiết kế cho 6 điểm mà tác động thật là 5 điểm.
+- Hoàn thiện phần chú thích D1, đánh đổi chấp nhận và các trường YAML chính trong `report/team/pilot_plan.yaml`.
+- Gắn nhãn độc lập 20 ca lỗi chuẩn Google PAIR trong `report/team/nhan_c_nguoi2_Khanh.md` và soạn 2 dòng khắc phục (Ca 18 Ngữ cảnh và Ca 4 Giới hạn hệ thống).
+- Tổng hợp toàn bộ hồ sơ launch v0 một trang tại `report/team/ho_so_launch_v0.md` với đề xuất Go có điều kiện (4 điều kiện rõ ràng).
+- Viết báo cáo nhóm `report/team/group_report.md`, quản lý phần chung `TEAM.md`, đại diện nhóm thuyết trình và trả lời phản biện Gate 2a.
 
 ### Bằng chứng
 
--
+- `src/lab13.py` (vùng Khánh) · lệnh `cd src && python lab13.py D1`.
+- `report/team/pilot_plan.yaml` (D1, đánh đổi, các trường YAML).
+- `report/team/nhan_c_nguoi2_Khanh.md` (bảng nhãn 20 ca độc lập + 2 giải pháp khắc phục).
+- `report/team/ho_so_launch_v0.md` (bảng 7 mục + 4 điều kiện đề xuất).
+- `report/team/group_report.md` và báo cáo cá nhân `report/team/2A202603472_NguyenKhacKhanh.md`.
 
 <!-- ===== MỤC CỦA HÙNG — chỉ Hùng sửa ===== -->
 
