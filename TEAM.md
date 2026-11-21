@@ -15,9 +15,8 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Thân Đức Trung | 2A202603449 | thanductrung123@gmail.com | DucTrung611 | Nhóm trưởng · Người viết code (A, B) |
-|   2 | Nguyễn Khắc Khánh | 2A202603472 |       | khackhanh1201 | Người gắn nhãn 2 kiêm giữ hồ sơ · Người viết code sau giải lao (D1) |
-|   3 | Trần Mạnh Hùng | 2A202603496 |       | gitchung-mmm | Người kiểm số · Người gắn nhãn 1 |
-|   4 | (nhóm 3 người) | | | | |
+|   2 | Nguyễn Khắc Khánh | 2A202603472 | khackhanh120104@gmail.com | khackhanh1201 | Người gắn nhãn 2 kiêm giữ hồ sơ · Người viết code sau giải lao (D1) |
+|   3 | Trần Mạnh Hùng | 2A202603496 | hungmochi003@gmail.com | gitchung-mmm | Người kiểm số · Người gắn nhãn 1 |
 
 Bốn vai của lab:
 
